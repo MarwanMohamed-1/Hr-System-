@@ -1,0 +1,15 @@
+/MyApp
+    ├── /Controllers                // Presentation Layer (Web API)
+    │   └── ProductController.cs
+    ├── /Models                     // Domain Models
+    │   └── Product.cs
+    ├── /Services                   // Business Logic Layer
+    │   ├── IProductService.cs
+    │   └── ProductService.cs
+    ├── /Repositories               // Data Access Layer
+    │   ├── IProductRepository.cs
+    │   └── ProductRepository.cs
+    ├── /Data                       // Database Context
+    │   └── AppDbContext.cs
+    ├── /Startup.cs                 // Dependency Injection and configuration
+    └── /appsettings.json           // Configuration (e.g., connection strings)
