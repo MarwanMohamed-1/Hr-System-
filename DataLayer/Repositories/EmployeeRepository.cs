@@ -16,15 +16,23 @@ namespace DataLayer.Repositories
         {
             _context = context;
         }
-        public Task AddEmployeeAsync(Employee employee)
+        public async Task AddEmployeeAsync(Employee employee)
         {
-            throw new NotImplementedException();
+            _context.Employees.Add(employee);
+            await _context.SaveChangesAsync();
         }
 
-        public Task DeleteEmployeeAsync(int id)
+
+        public async Task DeleteEmployeeAsync(int id)
         {
-            throw new NotImplementedException();
+            var employee = await _context.Employees.FindAsync(id);
+            if (employee != null)
+            {
+                _context.Employees.Remove(employee);
+                await _context.SaveChangesAsync();
+            }
         }
+
 
         public async Task<List<Employee>> GetAllEmployeesAsync()
         {
@@ -39,9 +47,25 @@ namespace DataLayer.Repositories
 
 
 
-        public Task UpdateEmployeeAsync(Employee employee)
+        public async Task UpdateEmployeeAsync(Employee employee)
         {
-            throw new NotImplementedException();
+            var existingEmployee = await _context.Employees.FindAsync(employee.Id);
+            if (existingEmployee != null)
+            {
+                existingEmployee.Name = employee.Name;
+                existingEmployee.Role = employee.Role;
+                existingEmployee.Salary = employee.Salary;
+                existingEmployee.Email= employee.Email;
+                existingEmployee.Password= employee.Password;
+                existingEmployee.Address = employee.Address;
+                existingEmployee.Age = employee.Age;
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                throw new KeyNotFoundException("Employee not found");
+            }
         }
+
     }
 }

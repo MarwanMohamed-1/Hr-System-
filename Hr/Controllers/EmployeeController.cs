@@ -23,21 +23,60 @@ namespace Hr.Controllers
         public async Task<ActionResult<List<Employee>>> GetAllEmployees()
         {
             var employees = await _employeeService.GetAllEmployeesAsync();
-            return Ok(employees); // Return a 200 OK response with the list of employees
+            if (employees == null|| !employees.Any())
+            {
+                return NotFound("No employees found.");
+            }
+            return Ok(employees); 
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<Employee>> GetEmpById(int id)
         {
             if(id < 0)
             {
-                return BadRequest();
+                return BadRequest("Id Cannot be Negative");
             }
             var employee = await _employeeService.GetEmployeeByIdAsync(id);
             if (employee == null)
             {
-                return BadRequest();
+                return NotFound("This Employee is NotFound");
             }
             return Ok(employee);
+        }
+        [HttpPost]
+        public async Task<ActionResult> AddEmployee(Employee employee)
+        {
+            await _employeeService.AddEmployee(employee);
+            return CreatedAtAction(nameof(GetEmpById), new { id = employee.Id }, employee);
+        }
+        [HttpPut]
+        public async Task<ActionResult> UpdateEmployee(Employee employee)
+        {
+            var existingEmployee = await _employeeService.GetEmployeeByIdAsync(employee.Id);
+            if (existingEmployee == null)
+            {
+                return NotFound("Employee not found.");
+            }
+            await _employeeService.UpdateEmployee(employee);
+            return Ok(employee); 
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteEmployee(int id)
+        {
+            if (id < 0)
+            {
+                return BadRequest("Invalid ID.");
+            }
+
+            var employeeExists = await _employeeService.GetEmployeeByIdAsync(id);
+            if (employeeExists == null)
+            {
+                return NotFound("Employee not found.");
+            }
+
+            await _employeeService.DeleteEmployee(id);
+            return NoContent(); 
         }
     }
 }
