@@ -20,5 +20,11 @@ namespace BusinessLayer
         {
             return await _employeeRepository.GetAllEmployeesAsync();
         }
+        public async Task<Employee?> GetEmployeeByIdAsync(int id)
+        {
+            var emp = await _employeeRepository.GetEmployeeByIdAsync(id);
+            return emp;
+        }
+
     }
 }

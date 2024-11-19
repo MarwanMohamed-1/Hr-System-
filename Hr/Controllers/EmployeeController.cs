@@ -5,6 +5,7 @@ using DataLayer.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.CompilerServices;
 
 
 namespace Hr.Controllers
@@ -23,6 +24,20 @@ namespace Hr.Controllers
         {
             var employees = await _employeeService.GetAllEmployeesAsync();
             return Ok(employees); // Return a 200 OK response with the list of employees
+        }
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Employee>> GetEmpById(int id)
+        {
+            if(id < 0)
+            {
+                return BadRequest();
+            }
+            var employee = await _employeeService.GetEmployeeByIdAsync(id);
+            if (employee == null)
+            {
+                return BadRequest();
+            }
+            return Ok(employee);
         }
     }
 }

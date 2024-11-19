@@ -8,6 +8,7 @@ H:\DEVOP Soloution\System Hr Project\BusinessLayer\obj\Debug\net6.0\BusinessLaye
 H:\DEVOP Soloution\System Hr Project\BusinessLayer\obj\Debug\net6.0\BusinessLayer.AssemblyInfoInputs.cache
 H:\DEVOP Soloution\System Hr Project\BusinessLayer\obj\Debug\net6.0\BusinessLayer.AssemblyInfo.cs
 H:\DEVOP Soloution\System Hr Project\BusinessLayer\obj\Debug\net6.0\BusinessLayer.csproj.CoreCompileInputs.cache
+H:\DEVOP Soloution\System Hr Project\BusinessLayer\obj\Debug\net6.0\BusinessLayer.sourcelink.json
 H:\DEVOP Soloution\System Hr Project\BusinessLayer\obj\Debug\net6.0\Business.EA331CBA.Up2Date
 H:\DEVOP Soloution\System Hr Project\BusinessLayer\obj\Debug\net6.0\BusinessLayer.dll
 H:\DEVOP Soloution\System Hr Project\BusinessLayer\obj\Debug\net6.0\refint\BusinessLayer.dll

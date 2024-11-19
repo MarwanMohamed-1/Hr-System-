@@ -15,5 +15,8 @@ namespace DataLayer.Entities
         public int? Age { get; set; }
         public string Role { get; set; } // "Normal" or "HR"
         public int VacationBalance { get; set; } = 21; // Default value is 21
+
+        public string Email { get; set; } 
+        public string Password { get; set; } 
     }
 }

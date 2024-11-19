@@ -31,10 +31,13 @@ namespace DataLayer.Repositories
             return await _context.Employees.ToListAsync();
         }
 
-        public Task<Employee> GetEmployeeByIdAsync(int id)
+        public async Task<Employee?> GetEmployeeByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var emp = await _context.Employees.FindAsync(id);
+            return emp;
         }
+
+
 
         public Task UpdateEmployeeAsync(Employee employee)
         {
