@@ -1,0 +1,47 @@
+<!-- <div class="alert alert-secondry">
+<p>{{Employee.id}}</p>
+<p>{{Employee.name}}</p>
+<p>{{Employee.email}}</p>
+<p>{{Employee.role}}</p>
+<p>{{Employee.salary}}</p>
+<p>{{Employee.age}}</p>
+<p>{{Employee.address}}</p>
+</div> -->
+@if(Employee){
+<div class="card shadow-lg mb-4" style="max-width: 500px; margin: auto;">
+    <div class="card-header bg-primary text-white text-center">
+      <h4>Employee Details</h4>
+    </div>
+    <div class="card-body">
+      <div class="list-group">
+        <div class="list-group-item d-flex justify-content-between">
+          <strong>Name:</strong>
+          <span>{{ Employee.name }}</span>
+        </div>
+        <div class="list-group-item d-flex justify-content-between">
+          <strong>Email:</strong>
+          <span>{{ Employee.email }}</span>
+        </div>
+        <div class="list-group-item d-flex justify-content-between">
+          <strong>Role:</strong>
+          <span>{{ Employee.role }}</span>
+        </div>
+        <div class="list-group-item d-flex justify-content-between">
+          <strong>Salary:</strong>
+          <span>{{ Employee.salary}}</span>
+        </div>
+        <div class="list-group-item d-flex justify-content-between">
+          <strong>Age:</strong>
+          <span>{{ Employee.age }}</span>
+        </div>
+        <div class="list-group-item d-flex justify-content-between">
+          <strong>Address:</strong>
+          <span>{{ Employee.address }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+}@else 
+{
+    <h1 class="alert alert-danger">Loading...</h1>
+}
