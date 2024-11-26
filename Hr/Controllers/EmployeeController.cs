@@ -29,7 +29,7 @@ namespace Hr.Controllers
             }
             return Ok(employees); 
         }
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<Employee>> GetEmpById(int id)
         {
             if(id < 0)
@@ -78,5 +78,21 @@ namespace Hr.Controllers
             await _employeeService.DeleteEmployee(id);
             return NoContent(); 
         }
+        [HttpGet("email/{email}")]
+        public async Task<ActionResult<Employee>> GetByEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email) || !email.Contains("@"))
+            {
+                return BadRequest("Invalid email address.");
+            }
+
+            var Employee =await  _employeeService.GetEmployeeByEmail(email);
+            if (Employee == null) 
+            { 
+                return NotFound("This email is not existed");
+            }
+            return Ok(Employee);
+        }
+        
     }
 }

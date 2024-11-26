@@ -17,4 +17,16 @@ export class UsersService {
   getEmployeeById(id:any){
     return this.http.get(this.apiUrl+"/"+id);
   }
+  AddNewUser(user:any)
+  {
+    return this.http.post(this.apiUrl,user);
+  }
+  DeleteUser(id:any)
+  {
+    return this.http.delete(this.apiUrl+"/"+id);
+  }
+  GetByEmail(email:any)
+  {
+    return this.http.get(this.apiUrl+"/email"+email);
+  }
 }

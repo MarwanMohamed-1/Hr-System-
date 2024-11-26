@@ -66,6 +66,9 @@ namespace DataLayer.Repositories
                 throw new KeyNotFoundException("Employee not found");
             }
         }
-
+        public async Task<Employee?> GetEmployeeByEmail(string email)
+        {
+            return await _context.Employees.FirstOrDefaultAsync(e => e.Email == email);
+        }   
     }
 }

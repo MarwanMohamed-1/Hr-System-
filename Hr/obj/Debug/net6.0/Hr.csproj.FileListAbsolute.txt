@@ -79,3 +79,4 @@ H:\DEVOP Soloution\System Hr Project\Hr\obj\Debug\net6.0\refint\Hr.dll
 H:\DEVOP Soloution\System Hr Project\Hr\obj\Debug\net6.0\Hr.pdb
 H:\DEVOP Soloution\System Hr Project\Hr\obj\Debug\net6.0\Hr.genruntimeconfig.cache
 H:\DEVOP Soloution\System Hr Project\Hr\obj\Debug\net6.0\ref\Hr.dll
+H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

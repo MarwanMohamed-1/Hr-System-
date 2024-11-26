@@ -14,6 +14,7 @@ namespace DataLayer.Repositories
         Task AddEmployeeAsync(Employee employee);
         Task UpdateEmployeeAsync(Employee employee);
         Task DeleteEmployeeAsync(int id);
+        Task<Employee?> GetEmployeeByEmail(string email);
     }
 
 }

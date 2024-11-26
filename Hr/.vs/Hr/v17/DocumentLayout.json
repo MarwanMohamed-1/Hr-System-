@@ -3,18 +3,21 @@
   "WorkspaceRootPath": "H:\\DEVOP Soloution\\System Hr Project\\Hr\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E343C9CD-A0AF-4E04-8ECC-738C6837DE06}|Hr.csproj|h:\\devop soloution\\system hr project\\hr\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E343C9CD-A0AF-4E04-8ECC-738C6837DE06}|Hr.csproj|solutionrelative:controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E343C9CD-A0AF-4E04-8ECC-738C6837DE06}|Hr.csproj|h:\\devop soloution\\system hr project\\hr\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E343C9CD-A0AF-4E04-8ECC-738C6837DE06}|Hr.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E343C9CD-A0AF-4E04-8ECC-738C6837DE06}|Hr.csproj|h:\\devop soloution\\system hr project\\hr\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E343C9CD-A0AF-4E04-8ECC-738C6837DE06}|Hr.csproj|solutionrelative:controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56E216D9-D45B-40D2-BB1F-F9F4F9A15790}|..\\BusinessLayer\\BusinessLayer.csproj|h:\\devop soloution\\system hr project\\businesslayer\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDCD3E1E-CA4F-4094-AC30-CFE2801177C5}|..\\DataLayer\\DataLayer.csproj|h:\\devop soloution\\system hr project\\datalayer\\repositories\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56E216D9-D45B-40D2-BB1F-F9F4F9A15790}|..\\BusinessLayer\\BusinessLayer.csproj|h:\\devop soloution\\system hr project\\businesslayer\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DDCD3E1E-CA4F-4094-AC30-CFE2801177C5}|..\\DataLayer\\DataLayer.csproj|h:\\devop soloution\\system hr project\\datalayer\\repositories\\iemployeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,56 +27,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "IEmployeeRepository.cs",
+              "DocumentMoniker": "H:\\DEVOP Soloution\\System Hr Project\\DataLayer\\Repositories\\IEmployeeRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataLayer\\Repositories\\IEmployeeRepository.cs",
+              "ToolTip": "H:\\DEVOP Soloution\\System Hr Project\\DataLayer\\Repositories\\IEmployeeRepository.cs",
+              "RelativeToolTip": "..\\DataLayer\\Repositories\\IEmployeeRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T00:49:44.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "H:\\DEVOP Soloution\\System Hr Project\\Hr\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "H:\\DEVOP Soloution\\System Hr Project\\Hr\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABIAAAAAAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACIAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-21T14:36:58.907Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "EmployeeController.cs",
               "DocumentMoniker": "H:\\DEVOP Soloution\\System Hr Project\\Hr\\Controllers\\EmployeeController.cs",
               "RelativeDocumentMoniker": "Controllers\\EmployeeController.cs",
               "ToolTip": "H:\\DEVOP Soloution\\System Hr Project\\Hr\\Controllers\\EmployeeController.cs",
               "RelativeToolTip": "Controllers\\EmployeeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAATAAAA",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAswF8AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T11:13:00.652Z"
+              "WhenOpened": "2024-11-19T11:13:00.652Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "EmployeeRepository.cs",
               "DocumentMoniker": "H:\\DEVOP Soloution\\System Hr Project\\DataLayer\\Repositories\\EmployeeRepository.cs",
               "RelativeDocumentMoniker": "..\\DataLayer\\Repositories\\EmployeeRepository.cs",
               "ToolTip": "H:\\DEVOP Soloution\\System Hr Project\\DataLayer\\Repositories\\EmployeeRepository.cs",
               "RelativeToolTip": "..\\DataLayer\\Repositories\\EmployeeRepository.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAgwBMAAAAJAAAA",
+              "ViewState": "AQIAADIAAAAAAAAAAAAUwEYAAABXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T11:02:03.231Z"
+              "WhenOpened": "2024-11-19T11:02:03.231Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "EmployeeService.cs",
               "DocumentMoniker": "H:\\DEVOP Soloution\\System Hr Project\\BusinessLayer\\EmployeeService.cs",
               "RelativeDocumentMoniker": "..\\BusinessLayer\\EmployeeService.cs",
               "ToolTip": "H:\\DEVOP Soloution\\System Hr Project\\BusinessLayer\\EmployeeService.cs",
               "RelativeToolTip": "..\\BusinessLayer\\EmployeeService.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAgwDAAAAAAAAAA",
+              "ViewState": "AQIAABoAAAAAAAAAAAAgwDEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-19T11:01:56.778Z"
+              "WhenOpened": "2024-11-19T11:01:56.778Z",
+              "EditorCaption": ""
             }
           ]
         }

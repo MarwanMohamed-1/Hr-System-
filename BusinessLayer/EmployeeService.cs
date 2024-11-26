@@ -44,5 +44,9 @@ namespace BusinessLayer
             var existingEmployee = await _employeeRepository.GetEmployeeByIdAsync(employee.Id);
             await _employeeRepository.UpdateEmployeeAsync(employee);
         }
+        public async Task<Employee?> GetEmployeeByEmail(string email)
+        {
+            return await _employeeRepository.GetEmployeeByEmail(email);
+        }
     }
 }
