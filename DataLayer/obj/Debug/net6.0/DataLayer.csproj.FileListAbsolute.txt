@@ -7,6 +7,7 @@ H:\DEVOP Soloution\System Hr Project\DataLayer\obj\Debug\net6.0\DataLayer.Genera
 H:\DEVOP Soloution\System Hr Project\DataLayer\obj\Debug\net6.0\DataLayer.AssemblyInfoInputs.cache
 H:\DEVOP Soloution\System Hr Project\DataLayer\obj\Debug\net6.0\DataLayer.AssemblyInfo.cs
 H:\DEVOP Soloution\System Hr Project\DataLayer\obj\Debug\net6.0\DataLayer.csproj.CoreCompileInputs.cache
+H:\DEVOP Soloution\System Hr Project\DataLayer\obj\Debug\net6.0\DataLayer.sourcelink.json
 H:\DEVOP Soloution\System Hr Project\DataLayer\obj\Debug\net6.0\DataLayer.dll
 H:\DEVOP Soloution\System Hr Project\DataLayer\obj\Debug\net6.0\refint\DataLayer.dll
 H:\DEVOP Soloution\System Hr Project\DataLayer\obj\Debug\net6.0\DataLayer.pdb
