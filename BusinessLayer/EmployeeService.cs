@@ -11,10 +11,11 @@ namespace BusinessLayer
     public class EmployeeService
     {
         private readonly IEmployeeRepository _employeeRepository;
-
-        public EmployeeService(IEmployeeRepository employeeRepository)
+        private readonly IUnitOfWork _unitOfWork;
+        public EmployeeService(IEmployeeRepository employeeRepository,IUnitOfWork unitOfWork)
         {
             _employeeRepository = employeeRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public async Task<List<Employee>> GetAllEmployeesAsync()

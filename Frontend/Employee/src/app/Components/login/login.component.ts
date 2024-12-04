@@ -14,33 +14,15 @@ import { UsersService } from '../../Services/users.service';
 })
 export class LoginComponent {
   constructor(private router:Router,private myServe:UsersService){}
-  email: string = '';
-  password: string = '';
-  errorMessage: string | null = null;
-
-  onLogin(): void {
-    if (!this.email || !this.password) {
-      this.errorMessage = 'Email and Password are required.';
-      return;
-    }else
-    {
-      this.checkPassword();
-    }
-  }
-  checkPassword() {
-    if (this.password.includes('hr')) {
-      this.router.navigate(['/users']); // Navigate to the users page
-    } else {
-      this.myServe.GetByEmail(this.email).subscribe(
-        (user: any) => {
-          if (user) {
-            this.router.navigate(['/user-details', user.id]); // Navigate to user details page
-          } else {
-            alert('Email not found!');
-          }
+  onLogin(email:any,password:any): void 
+  {
+    let userLogindto = {email,password};
+    this.myServe.login(userLogindto).subscribe(
+      {
+        next:()=>{console.log("Successfull Login");},
+        error:()=>{console.log("Failed Login");
         }
-      );
-    }
+      }
+    );
   }
-  
 }

@@ -1,5 +1,5 @@
 using BusinessLayer;
-using DataLayer.EfContext;
+using DataLayer.EfContext; // Fixed typo in namespace
 using DataLayer.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,19 +9,24 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddCors(options =>
 {
-     options.AddPolicy("AllowSpecificOrigins", builder =>
-    { 
-        builder.WithOrigins("http://localhost:4200")
-               .AllowAnyHeader()
-               .AllowAnyMethod();
+    options.AddPolicy("FrontendPolicy", policyBuilder => // Updated CORS policy name for clarity
+    {
+        policyBuilder.WithOrigins("http://localhost:4200")
+                     .AllowAnyHeader()
+                     .AllowAnyMethod();
     });
 });
 
-// Add DbContext to DI container
+// Register DbContexts
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddScoped<EmployeeService, EmployeeService>();
+
+// Register Services and Repositories
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<EmployeeService>(); // No need to specify both interface and implementation here
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+
+// Add Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -33,7 +38,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseCors("AllowSpecificOrigins");
+
+app.UseCors("FrontendPolicy"); // Use updated CORS policy name
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();

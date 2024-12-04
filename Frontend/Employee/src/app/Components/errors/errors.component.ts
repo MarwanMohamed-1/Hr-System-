@@ -12,10 +12,10 @@ export class ErrorsComponent {
   constructor(private location: Location) {}
 
   goBack(): void {
-    this.location.back(); // Correct method to go back to the previous page
+    this.location.back(); 
   }
 
   reloadPage(): void {
-    window.location.reload(); // Reloads the current page
+    window.location.reload();
   }
 }

@@ -6,6 +6,10 @@ H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Hr.runtimeconfig.json
 H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Hr.dll
 H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Hr.pdb
 H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Humanizer.dll
+H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -16,6 +20,8 @@ H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Microsoft.Extensions.Ca
 H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
 H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
 H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
 H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
@@ -79,4 +85,3 @@ H:\DEVOP Soloution\System Hr Project\Hr\obj\Debug\net6.0\refint\Hr.dll
 H:\DEVOP Soloution\System Hr Project\Hr\obj\Debug\net6.0\Hr.pdb
 H:\DEVOP Soloution\System Hr Project\Hr\obj\Debug\net6.0\Hr.genruntimeconfig.cache
 H:\DEVOP Soloution\System Hr Project\Hr\obj\Debug\net6.0\ref\Hr.dll
-H:\DEVOP Soloution\System Hr Project\Hr\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

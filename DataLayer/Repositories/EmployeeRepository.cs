@@ -12,28 +12,27 @@ namespace DataLayer.Repositories
     public class EmployeeRepository : IEmployeeRepository
     {
         private readonly ApplicationDbContext _context;
-        public EmployeeRepository(ApplicationDbContext context)
+        private readonly IUnitOfWork _unitOfWork;
+        public EmployeeRepository(ApplicationDbContext context,IUnitOfWork unitOfWork)
         {
             _context = context;
+            _unitOfWork = unitOfWork;
         }
         public async Task AddEmployeeAsync(Employee employee)
         {
             _context.Employees.Add(employee);
-            await _context.SaveChangesAsync();
+            //await _context.SaveChangesAsync();
+            await _unitOfWork.SaveChange();
         }
-
-
         public async Task DeleteEmployeeAsync(int id)
         {
             var employee = await _context.Employees.FindAsync(id);
             if (employee != null)
             {
                 _context.Employees.Remove(employee);
-                await _context.SaveChangesAsync();
+                await _unitOfWork.SaveChange();
             }
         }
-
-
         public async Task<List<Employee>> GetAllEmployeesAsync()
         {
             return await _context.Employees.ToListAsync();
@@ -44,9 +43,6 @@ namespace DataLayer.Repositories
             var emp = await _context.Employees.FindAsync(id);
             return emp;
         }
-
-
-
         public async Task UpdateEmployeeAsync(Employee employee)
         {
             var existingEmployee = await _context.Employees.FindAsync(employee.Id);
@@ -59,7 +55,7 @@ namespace DataLayer.Repositories
                 existingEmployee.Password= employee.Password;
                 existingEmployee.Address = employee.Address;
                 existingEmployee.Age = employee.Age;
-                await _context.SaveChangesAsync();
+                await _unitOfWork.SaveChange();
             }
             else
             {

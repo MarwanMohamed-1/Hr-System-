@@ -76,7 +76,7 @@ namespace Hr.Controllers
             }
 
             await _employeeService.DeleteEmployee(id);
-            return NoContent(); 
+            return NoContent();
         }
         [HttpGet("email/{email}")]
         public async Task<ActionResult<Employee>> GetByEmail(string email)

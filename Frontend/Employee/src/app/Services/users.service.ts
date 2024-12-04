@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 export class UsersService {
   //1)Url
   private readonly apiUrl = "https://localhost:7001/api/Employee";
+  private readonly loginUrl="https://localhost:7001/api/Login";
   //2)Http==>get post put delete
   constructor(private readonly http:HttpClient) {}
   
@@ -25,8 +26,8 @@ export class UsersService {
   {
     return this.http.delete(this.apiUrl+"/"+id);
   }
-  GetByEmail(email:any)
+  login(user:any)
   {
-    return this.http.get(this.apiUrl+"/email"+email);
+    return this.http.post(this.loginUrl,user);
   }
 }

@@ -30,6 +30,4 @@ export class NewUserComponent {
     this.myServe.AddNewUser(user).subscribe();
     this.userAdded=true;
   }
-
-  
 }
