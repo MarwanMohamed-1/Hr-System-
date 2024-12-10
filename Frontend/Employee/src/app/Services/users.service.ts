@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -12,9 +12,18 @@ export class UsersService {
   constructor(private readonly http:HttpClient) {}
   
   //3)Handle All Requests
-  getAllEmployees(){
-    return this.http.get(this.apiUrl);
+  getAllEmployees() {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      console.log('Token not found');
+    }
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`, // Correct syntax
+    });
+
+    return this.http.get(this.apiUrl, { headers });
   }
+  
   getEmployeeById(id:any){
     return this.http.get(this.apiUrl+"/"+id);
   }
@@ -30,4 +39,8 @@ export class UsersService {
   {
     return this.http.post(this.loginUrl,user);
   }
+  getbyemail(email:any){
+      return this.http.get(this.apiUrl+"/email/"+email);
+  }
+
 }

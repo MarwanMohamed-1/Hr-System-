@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UsersService } from '../../Services/users.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-user',
@@ -14,7 +15,7 @@ import { CommonModule } from '@angular/common';
 })
 export class NewUserComponent {
   userAdded = false;
-  constructor(private myServe:UsersService){}
+  constructor(private myServe:UsersService,private router :Router){}
   add(name: any, email: any, age: any, salary: any, role: any, address: string)
   {
     let user = {
@@ -29,5 +30,7 @@ export class NewUserComponent {
     };
     this.myServe.AddNewUser(user).subscribe();
     this.userAdded=true;
+    this.myServe.getAllEmployees().subscribe
   }
+
 }

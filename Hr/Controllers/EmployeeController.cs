@@ -2,6 +2,7 @@
 using DataLayer.EfContext;
 using DataLayer.Entities;
 using DataLayer.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +20,7 @@ namespace Hr.Controllers
         {
             _employeeService = employeeService;
         }
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<List<Employee>>> GetAllEmployees()
         {

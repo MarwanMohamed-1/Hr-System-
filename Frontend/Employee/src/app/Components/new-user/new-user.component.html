@@ -1,51 +1,59 @@
 <div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="p-4 border rounded shadow-sm bg-light">
-          <h3 class="text-center mb-4">Add Employee</h3>
-  
-          <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input #name type="text" id="name" class="form-control" placeholder="Enter Name">
-          </div>
-  
-          <div class="mb-3">
-            <label for="role" class="form-label">Role</label>
-            <input #role type="text" id="role" class="form-control" placeholder="Enter Role">
-          </div>
-  
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input #email type="email" id="email" class="form-control" placeholder="Enter Email">
-          </div>
-  
-          <div class="mb-3">
-            <label for="salary" class="form-label">Salary</label>
-            <input #salary type="number" id="salary" class="form-control" placeholder="Enter Salary">
-          </div>
-  
-          <div class="mb-3">
-            <label for="age" class="form-label">Age</label>
-            <input #age type="number" id="age" class="form-control" placeholder="Enter Age">
-          </div>
-  
-          <div class="mb-3">
-            <label for="address" class="form-label">Address</label>
-            <input #address type="text" id="address" class="form-control" placeholder="Enter Address">
-          </div>
-  
-          <button (click)="add(name.value, email.value, age.value, salary.value, role.value, address.value)" 
-                  type="button" class="btn btn-primary w-100">
-            Add Employee
-          </button>
-  
-          <!-- Success Message -->
-          <div *ngIf="userAdded" class="alert alert-dismissible alert-success mt-4">
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            <strong>Well done!</strong> You successfully added the user.
-          </div>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="p-4 border rounded shadow-sm bg-light">
+        <h3 class="text-center mb-4">Add Employee</h3>
+
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input #name type="text" id="name" class="form-control" placeholder="Enter Name" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="role" class="form-label">Role</label>
+          <input #role type="text" id="role" class="form-control" placeholder="Enter Role" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input #email type="email" id="email" class="form-control" placeholder="Enter Email" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="salary" class="form-label">Salary</label>
+          <input #salary type="number" id="salary" class="form-control" placeholder="Enter Salary" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="age" class="form-label">Age</label>
+          <input #age type="number" id="age" class="form-control" placeholder="Enter Age" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="address" class="form-label">Address</label>
+          <input #address type="text" id="address" class="form-control" placeholder="Enter Address" required>
+        </div>
+
+        <!-- Add Employee button -->
+        <button 
+          (click)="add(name.value, email.value, age.value, salary.value, role.value, address.value)"
+          [disabled]="!name.value || !role.value || !email.value || !salary.value || !age.value || !address.value"
+          type="button" 
+          class="btn btn-primary w-100">
+          Add Employee
+        </button>
+
+        <!-- Back to List button with Router navigation -->
+        <button type="button" class="btn btn-secondary w-100 mt-2">
+          Back to List
+        </button>
+
+        <!-- Success Message -->
+        <div *ngIf="userAdded" class="alert alert-dismissible alert-success mt-4">
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          <strong>Well done!</strong> You successfully added the user.
         </div>
       </div>
     </div>
   </div>
-  
+</div>

@@ -15,4 +15,8 @@ export class UsersService {
   {
     return this.http.post(this.apiUrl,user);
   }
+  GetemployeeByEmail()
+  {
+    
+  }
 }

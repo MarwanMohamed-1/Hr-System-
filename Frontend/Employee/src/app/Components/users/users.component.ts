@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../Services/users.service';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -17,7 +17,7 @@ import { CommonModule } from '@angular/common';
 export class UsersComponent implements OnInit {
   employees: any = []; // Array to store employees
 
-  constructor(private myServe: UsersService) {}
+  constructor(private myServe: UsersService,private router:Router) {}
 
   ngOnInit(): void {
     // Load the list of employees when the component initializes
@@ -31,7 +31,7 @@ export class UsersComponent implements OnInit {
         console.log(data);
       },
       error: (err) => {
-        console.error('Error fetching employees:', err);
+        this.router.navigate(["/mbxn"]);
       }
     });
   }

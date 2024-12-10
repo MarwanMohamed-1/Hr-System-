@@ -10,6 +10,7 @@
             id="email"
             #email
             class="form-control"
+            [ngClass]="{'border-danger': loginFailed}" 
             placeholder="Enter your email"
             required
           />
@@ -21,20 +22,15 @@
             id="password"
             #password
             class="form-control"
+            [ngClass]="{'border-danger': loginFailed}"  
             placeholder="Enter your password"
             required
           />
         </div>
-        <button
-          type="button"
-          class="btn btn-primary w-100"
-          (click)="onLogin(email.value, password.value)"
-        >
-          Login
-        </button>
+        <button type="button" class="btn btn-primary w-100" (click)="onLogin(email.value, password.value)">Login</button>
       </form>
-      <div class="mt-3 text-center">
-        <a href="#" class="text-muted">Forgot password?</a>
+      <div *ngIf="loginFailed" class="text-danger mt-3">
+        <p>Login failed. Please check your credentials and try again.</p>
       </div>
     </div>
   </div>
