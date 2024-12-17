@@ -51,20 +51,20 @@ export class LoginComponent {
 
             // Step 4: Navigate based on email content
             if (email.toLowerCase().includes('hr')) {
-              this.router.navigate(['/users']); // Navigate to HR view
+              this.router.navigate(['/users']); 
             } else {
               this.router.navigate(['/users', data.id]);
             }
           },
           error: (err) => {
             console.error('Error fetching data by email:', err);
-            this.loginFailed = true; // Mark login as failed on error
+            this.loginFailed = true;
           },
         });
       },
       error: (err) => {
         console.error('Failed Login:', err);
-        this.loginFailed = true; // Mark login as failed
+        this.loginFailed = true;
       },
     });
   }

@@ -1,36 +1,59 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from '../../Services/users.service';
-import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-new-user',
   standalone: true,
-  imports: [CommonModule],
-  providers:[
-    UsersService
-  ],
+  imports: [CommonModule,ReactiveFormsModule],
+  providers: [UsersService],
   templateUrl: './new-user.component.html',
-  styleUrl: './new-user.component.css'
+  styleUrls: ['./new-user.component.css'],
 })
 export class NewUserComponent {
+  userForm: FormGroup;
   userAdded = false;
-  constructor(private myServe:UsersService,private router :Router){}
-  add(name: any, email: any, age: any, salary: any, role: any, address: string)
-  {
-    let user = {
-      name,
-      age,
-      email,
-      salary,
-      role,
-      address,
-      vacationBalance: 21,  // Default value as per Swagger
-      password: 'password123' // Default password, or use a dynamic value
-    };
-    this.myServe.AddNewUser(user).subscribe();
-    this.userAdded=true;
-    this.myServe.getAllEmployees().subscribe
+
+  constructor(
+    private fb: FormBuilder,
+    private userService: UsersService,
+    private router: Router
+  ) {
+    this.userForm = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
+      age: [
+        '',
+        [Validators.required, Validators.min(18), Validators.max(60)],
+      ],
+      salary: ['', [Validators.required, Validators.min(1000)]],
+      role: ['', Validators.required],
+      address: ['', [Validators.required, Validators.minLength(5)]],
+    });
   }
 
+  add() {
+    if (this.userForm.valid) {
+      const newUser = {
+        ...this.userForm.value,
+        vacationBalance: 21,
+        password: 'password123', // Placeholder password
+      };
+
+      this.userService.AddNewUser(newUser).subscribe(() => {
+        this.userAdded = true;
+        this.router.navigate(['/users']); // Redirect to the users list after adding
+      });
+    } else {
+      this.userForm.markAllAsTouched(); // Highlight invalid fields
+    }
+  }
+
+  cancel() {
+    this.router.navigate(['/users']); // Navigate back to users list without adding
+  }
 }

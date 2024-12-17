@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { UsersService } from '../../Services/users.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-users-details',
   standalone: true,
-  imports: [],
+  imports: [CommonModule,RouterModule],
   templateUrl: './users-details.component.html',
   styles: ``,
   providers:[UsersService]
