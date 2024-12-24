@@ -12,6 +12,7 @@ namespace DataLayer.Entities
         public int EmployeeId { get; set; } // Foreign key to Employee
         public int RequestedDays { get; set; }
         public string Status { get; set; } // Pending, Approved, Rejected
+        public string? Description { get; set; }
         public DateTime DateRequested { get; set; }
         public DateTime? DateApproved { get; set; }
 

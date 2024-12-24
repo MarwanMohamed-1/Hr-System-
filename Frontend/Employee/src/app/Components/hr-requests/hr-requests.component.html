@@ -1,0 +1,37 @@
+<div class="container mt-4">
+    <h2>All Vacation Requests</h2>
+    @if(errorMessage){
+    <div class="alert alert-warning">
+      {{ errorMessage }}
+    </div>
+    }
+    @if(vacationRequests)
+    {
+    <table  class="table table-bordered mt-3">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Employee Name</th>
+          <th>Requested Days</th>
+          <th>Status</th>
+          <th>Description</th>
+          <th>Date Requested</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(request of vacationRequests;track request.id)
+        {
+        <tr>
+          <td>{{ request.id }}</td>
+          <td>{{ request.employee.name }}</td>
+          <td>{{ request.requestedDays }}</td>
+          <td>{{ request.status }}</td>
+          <td>{{ request.description }}</td>
+          <td>{{ request.dateRequested}}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+}
+  </div>
+  

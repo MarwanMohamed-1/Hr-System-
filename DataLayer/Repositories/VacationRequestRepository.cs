@@ -12,21 +12,24 @@ namespace DataLayer.Repositories
     public class VacationRequestRepository : IVacationRequestRepository
     {
         private readonly ApplicationDbContext _context;
-        public VacationRequestRepository(ApplicationDbContext context) 
+        private readonly IUnitOfWork _unitOfWork;
+
+        public VacationRequestRepository(ApplicationDbContext context,IUnitOfWork unitOfWork) 
         {
             _context = context;
+            _unitOfWork = unitOfWork;
         }
-        public async Task<VacationRequest> CreateRequestAsync(VacationRequest request)
+        public async Task CreateRequestAsync(VacationRequest request)
         {
             _context.VacationRequests.Add(request);
-            await _context.SaveChangesAsync();
-            return request;
+            await _unitOfWork.SaveChange();
         }
 
-        public async Task<IEnumerable<VacationRequest>> GetAllRequestsAsync()
+        public async Task<List<VacationRequest>> GetAllRequestsAsync()
         {
             return await _context.VacationRequests.ToListAsync();
         }
+
 
         public Task<VacationRequest> GetRequestByEmailAsync(string email)
         {

@@ -41,7 +41,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 // Register Services and Repositories
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Services.AddScoped<EmployeeService>(); // No need to specify both interface and implementation here
+builder.Services.AddScoped<EmployeeService>();
+builder.Services.AddScoped<IVacationRequestRepository,VacationRequestRepository>();
+builder.Services.AddScoped<VacationRequestService>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
 // Add Swagger

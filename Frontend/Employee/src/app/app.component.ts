@@ -4,6 +4,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { RouterModule } from '@angular/router';
 import { Routes } from '@angular/router';
 import { HeaderComponent } from './Components/header/header.component';
+import { MatCardModule } from '@angular/material/card';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
   standalone: true,
   imports: [ 
     RouterModule,
-    HeaderComponent
+    HeaderComponent,
+    MatCardModule
    ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']

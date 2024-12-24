@@ -1,24 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';  // Import your main component
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  declarations: [],  // Do not declare AppComponent here since it's standalone
   imports: [
-    BrowserModule // Import HttpClientModule here to make HTTP requests
+    BrowserModule,
+    MatIconModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
   ],
-  providers: [],  // Register your service here
+  providers: [], // Register any services here
 })
-export class AppModule { }
-
-// Bootstrap the standalone AppComponent
-import { bootstrapApplication } from '@angular/platform-browser';
-
-bootstrapApplication(AppComponent);  // Use bootstrapApplication to bootstrap the standalone component
-export interface Employee {
-  id: number;
-  name: string;
-  position: string;
-  department: string;
-  salary: number;
-}
+export class AppModule {}

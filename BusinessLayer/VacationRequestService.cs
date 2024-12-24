@@ -10,11 +10,18 @@ namespace BusinessLayer
 {
     public class VacationRequestService
     {
-        private readonly IVacationRequestRepository _vacationRequest;
+        private readonly IVacationRequestRepository _vacationRequestRepository;
         public VacationRequestService(IVacationRequestRepository vacationRequest)
         {
-            _vacationRequest = vacationRequest;
+            _vacationRequestRepository = vacationRequest;
         }
-        
+        public async Task<List<VacationRequest>>GetVacationRequestsAsync()
+        {
+            return await _vacationRequestRepository.GetAllRequestsAsync();
+        }
+        public async Task AddNewRequest(VacationRequest r)
+        {
+             await _vacationRequestRepository.CreateRequestAsync(r);
+        }
     }
 }

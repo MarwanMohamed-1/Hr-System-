@@ -1,40 +1,56 @@
-<div class="container">
-    <div class="d-flex justify-content-center align-items-center">
-        <a class="btn btn-success" routerLink="/NewUser" routerLinkActive="active-link">Add New User</a>
-    </div>
-    @if(employees) {
-        <div>
-            <table class="table table-hover table-bordered">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Role</th>
-                        <th></th>
-                    </tr>
-                </thead> 
-                <tbody>
-                    @for (item of employees; track item.id) {
-                        <tr class="table-primary">
-                            <td>{{item.name}}</td>
-                            <td>{{item.email}}</td>
-                            <td>{{item.role}}</td>
-                            <td>
-                                <a routerLink="/users/{{item.id}}" class="btn btn-primary">
-                                    Details
-                                </a>
-                            </td>
-                            <td>
-                                <a (click)="delete(item.id)" class="btn btn-danger">Delete</a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
+<mat-card class="container">
+    <mat-card>
+      <button mat-raised-button color="primary" routerLink="/NewUser" routerLinkActive="active-link">
+        Add New User
+      </button>
+    </mat-card>
+  
+    <mat-card>
+      <button mat-raised-button color="accent" routerLink="/hrRequests" routerLinkActive="active-link">
+        View Requests
+      </button>
+    </mat-card>
+  
+    @if (employees) {
+      <mat-card>
+        <table mat-table [dataSource]="employees" class="mat-elevation-z8">
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef>Email</th>
+            <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="role">
+            <th mat-header-cell *matHeaderCellDef>Role</th>
+            <td mat-cell *matCellDef="let element">{{ element.role }}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let element">
+              <div class="action-icons">
+                <button mat-icon-button color="primary" routerLink="/users/{{ element.id }}">
+                  <mat-icon>info</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" (click)="delete(element.id)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+            </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="['name', 'email', 'role', 'actions']"></tr>
+          <tr mat-row *matRowDef="let row; columns: ['name', 'email', 'role', 'actions'];"></tr>
+        </table>
+      </mat-card>
     } @else {
-        <div class="alert alert-danger text-center mt-5">
-            <h1>Loading...</h1>
-        </div>
+      <mat-card class="loading-card">
+        <h1>Loading...</h1>
+      </mat-card>
     }
-</div>
+  </mat-card>
+  

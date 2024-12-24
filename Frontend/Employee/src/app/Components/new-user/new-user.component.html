@@ -1,159 +1,118 @@
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div class="p-4 border rounded shadow-sm bg-light">
-        <h3 class="text-center mb-4">Add Employee</h3>
+<mat-card class="mat-elevation-z4 my-4">
+  <mat-card-header class="bg-primary text-white text-center">
+    <mat-card-title>Add Employee</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="userForm" (ngSubmit)="add()">
+      <!-- Name -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Name</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Enter Name"
+          formControlName="name"
+        />
+        <mat-error *ngIf="userForm.get('name')?.touched && userForm.get('name')?.invalid">
+          Name is required and must be at least 3 characters long.
+        </mat-error>
+      </mat-form-field>
 
-        <form [formGroup]="userForm" (ngSubmit)="add()">
-          <!-- Name -->
-          <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input
-              type="text"
-              id="name"
-              class="form-control"
-              placeholder="Enter Name"
-              formControlName="name"
-            />
-            <small
-              *ngIf="
-                userForm.get('name')?.touched &&
-                userForm.get('name')?.invalid
-              "
-              class="text-danger"
-            >
-              Name is required and must be at least 3 characters long.
-            </small>
-          </div>
+      <!-- Role -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Role</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Enter Role"
+          formControlName="role"
+        />
+        <mat-error *ngIf="userForm.get('role')?.touched && userForm.get('role')?.invalid">
+          Role is required.
+        </mat-error>
+      </mat-form-field>
 
-          <!-- Role -->
-          <div class="mb-3">
-            <label for="role" class="form-label">Role</label>
-            <input
-              type="text"
-              id="role"
-              class="form-control"
-              placeholder="Enter Role"
-              formControlName="role"
-            />
-            <small
-              *ngIf="
-                userForm.get('role')?.touched &&
-                userForm.get('role')?.invalid
-              "
-              class="text-danger"
-            >
-              Role is required.
-            </small>
-          </div>
+      <!-- Email -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          type="email"
+          placeholder="Enter Email"
+          formControlName="email"
+        />
+        <mat-error *ngIf="userForm.get('email')?.touched && userForm.get('email')?.invalid">
+          Valid email is required.
+        </mat-error>
+      </mat-form-field>
 
-          <!-- Email -->
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input
-              type="email"
-              id="email"
-              class="form-control"
-              placeholder="Enter Email"
-              formControlName="email"
-            />
-            <small
-              *ngIf="
-                userForm.get('email')?.touched &&
-                userForm.get('email')?.invalid
-              "
-              class="text-danger"
-            >
-              Valid email is required.
-            </small>
-          </div>
+      <!-- Salary -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Salary</mat-label>
+        <input
+          matInput
+          type="number"
+          placeholder="Enter Salary"
+          formControlName="salary"
+        />
+        <mat-error *ngIf="userForm.get('salary')?.touched && userForm.get('salary')?.invalid">
+          Salary must be at least 1000.
+        </mat-error>
+      </mat-form-field>
 
-          <!-- Salary -->
-          <div class="mb-3">
-            <label for="salary" class="form-label">Salary</label>
-            <input
-              type="number"
-              id="salary"
-              class="form-control"
-              placeholder="Enter Salary"
-              formControlName="salary"
-            />
-            <small
-              *ngIf="
-                userForm.get('salary')?.touched &&
-                userForm.get('salary')?.invalid
-              "
-              class="text-danger"
-            >
-              Salary must be at least 1000.
-            </small>
-          </div>
+      <!-- Age -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Age</mat-label>
+        <input
+          matInput
+          type="number"
+          placeholder="Enter Age"
+          formControlName="age"
+        />
+        <mat-error *ngIf="userForm.get('age')?.touched && userForm.get('age')?.invalid">
+          Age must be between 18 and 60.
+        </mat-error>
+      </mat-form-field>
 
-          <!-- Age -->
-          <div class="mb-3">
-            <label for="age" class="form-label">Age</label>
-            <input
-              type="number"
-              id="age"
-              class="form-control"
-              placeholder="Enter Age"
-              formControlName="age"
-            />
-            <small
-              *ngIf="
-                userForm.get('age')?.touched &&
-                userForm.get('age')?.invalid
-              "
-              class="text-danger"
-            >
-              Age must be between 18 and 60.
-            </small>
-          </div>
+      <!-- Address -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Address</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Enter Address"
+          formControlName="address"
+        />
+        <mat-error *ngIf="userForm.get('address')?.touched && userForm.get('address')?.invalid">
+          Address is required and must be at least 5 characters long.
+        </mat-error>
+      </mat-form-field>
 
-          <!-- Address -->
-          <div class="mb-3">
-            <label for="address" class="form-label">Address</label>
-            <input
-              type="text"
-              id="address"
-              class="form-control"
-              placeholder="Enter Address"
-              formControlName="address"
-            />
-            <small
-              *ngIf="
-                userForm.get('address')?.touched &&
-                userForm.get('address')?.invalid
-              "
-              class="text-danger"
-            >
-              Address is required and must be at least 5 characters long.
-            </small>
-          </div>
+      <!-- Buttons -->
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="userForm.invalid"
+        class="full-width"
+      >
+        Add Employee
+      </button>
 
-          <!-- Buttons -->
-          <button
-            type="submit"
-            class="btn btn-primary w-100"
-            [disabled]="userForm.invalid"
-          >
-            Add Employee
-          </button>
+      <button
+        mat-raised-button
+        color="accent"
+        type="button"
+        (click)="cancel()"
+        class="full-width mt-2"
+      >
+        Back to List
+      </button>
+    </form>
 
-          <button
-            type="button"
-            class="btn btn-secondary w-100 mt-2"
-            (click)="cancel()"
-          >
-            Back to List
-          </button>
-        </form>
-
-        <!-- Success Message -->
-        <div *ngIf="userAdded" class="alert alert-success mt-4">
-          <strong>Well done!</strong> You successfully added the user.
-        </div>
-      </div>
+    <!-- Success Message -->
+    <div *ngIf="userAdded" class="alert alert-success mt-4">
+      <strong>Well done!</strong> You successfully added the user.
     </div>
-  </div>
-</div>
+  </mat-card-content>
+</mat-card>

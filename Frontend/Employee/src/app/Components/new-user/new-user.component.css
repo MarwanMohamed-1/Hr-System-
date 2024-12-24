@@ -1,0 +1,51 @@
+/* Container and Card Styling */
+.container {
+    margin-top: 40px;
+  }
+  
+  .mat-card {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .mat-card-header {
+    background-color: #3f51b5;
+    color: white;
+  }
+  
+  .mat-card-title {
+    text-align: center;
+  }
+  
+  /* Form Field Styling */
+  mat-form-field {
+    width: 100%;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  /* Margin Top for Elements */
+  .mt-2 {
+    margin-top: 20px;
+  }
+  
+  /* Success and Error Messages */
+  .alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }
+  
+  .alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+  }
+  
+  /* Buttons Styling */
+  button {
+    margin-top: 20px;
+  }
+  
